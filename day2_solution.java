@@ -34,7 +34,10 @@ class day2_solution {
         }
         return true;
     }
-
+    public static void program3(String str1, String str2) {
+        String result = str1.substring(1) + str2.substring(1);
+        System.out.println("Concatenated String: " + result);
+    }
 
 
     public static void main(String[] args) {
@@ -51,6 +54,12 @@ class day2_solution {
                 System.out.println("PROGRAM 2");
                 program2();
                 break;  
+            case 3:
+                System.out.println("PROGRAM 3");
+                String str1 = sc.next();
+                String str2 = sc.next();
+                program3(str1, str2);
+                break;    
             default:
                 System.out.println("Invalid choice!");
         }
