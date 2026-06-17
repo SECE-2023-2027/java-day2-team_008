@@ -1,6 +1,7 @@
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
-
 class day2_solution {
     public static void program1(int seconds) {
         int hours = seconds / 3600;
@@ -38,7 +39,18 @@ class day2_solution {
         String result = str1.substring(1) + str2.substring(1);
         System.out.println("Concatenated String: " + result);
     }
-
+    public static void program4(String str) {
+        Map<Character, Integer> charCount = new HashMap<>();
+        for (char c : str.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+        for(int i=0;i<str.length();i++){
+            if (charCount.get(str.charAt(i)) == 1) {
+                System.out.println(i);
+                break;
+            }
+        }
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -60,6 +72,11 @@ class day2_solution {
                 String str2 = sc.next();
                 program3(str1, str2);
                 break;    
+            case 4:
+                System.out.println("PROGRAM 4");
+                String str = sc.next();
+                program4(str);
+                break;
             default:
                 System.out.println("Invalid choice!");
         }
