@@ -51,7 +51,7 @@ class day2_solution {
             }
         }
     }
-    public static int program5(int[] arr, int val) {
+    public static int program6(int[] arr, int val) {
         int index = 0;
 
         for (int i = 0; i < arr.length; i++) {
@@ -87,8 +87,8 @@ class day2_solution {
                 String str = sc.next();
                 program4(str);
                 break;
-            case 5:
-                System.out.println("PROGRAM 5");
+            case 6:
+                System.out.println("PROGRAM 6");
                 System.out.println("Enter size of array and elements : ");
                 int num = sc.nextInt();
                 int[] arr = new int[num];
@@ -98,7 +98,7 @@ class day2_solution {
                 }
                 System.out.println("Enter value to remove:");
                 int val = sc.nextInt();            
-                int newLength = program5(arr, val);
+                int newLength = program6(arr, val);
                 System.out.println("The length of the new array is: " + newLength);
                 break;
             default:
