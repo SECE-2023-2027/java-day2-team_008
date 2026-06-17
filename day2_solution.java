@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -51,6 +52,7 @@ class day2_solution {
             }
         }
     }
+
     public static int program6(int[] arr, int val) {
         int index = 0;
 
@@ -61,6 +63,26 @@ class day2_solution {
             }
         }
         return index;
+    }
+    public static boolean program7(String str1, String str2) {
+        str1 = str1.replaceAll("\\s", "").toLowerCase();
+        str2 = str2.replaceAll("\\s", "").toLowerCase();
+
+        // If lengths differ → not anagram
+        if (str1.length() != str2.length()) {
+            return false;
+        }
+
+        // Convert to char arrays
+        char[] arr1 = str1.toCharArray();
+        char[] arr2 = str2.toCharArray();
+
+        // Sort arrays
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        // Compare arrays
+        return Arrays.equals(arr1, arr2);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -100,6 +122,18 @@ class day2_solution {
                 int val = sc.nextInt();            
                 int newLength = program6(arr, val);
                 System.out.println("The length of the new array is: " + newLength);
+                break;
+            case 7:
+                System.out.println("String-1 : ");
+                String s1 = sc.next();
+
+                System.out.println("String-2 : ");
+                String s2 = sc.next();
+
+                // Check anagram
+                boolean result = program7(s1, s2);
+
+                System.out.println("Check if two given strings are anagrams or not?: " + result);
                 break;
             default:
                 System.out.println("Invalid choice!");
